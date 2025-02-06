@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Basic Form Elements | Bootstrap Based Admin Template - Material Design</title>
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
-
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -61,6 +61,15 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    
+    <style>
+        th input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+    </style>
 </head>
 
 <body class="theme-red">
@@ -673,18 +682,18 @@
                 </div>
             </div>
             
-            <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped js-basic-example ">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
-                                        
                                         <tr>
-                                            
+                                            <th>
+                                                <input class="form-check-input" type="checkbox" id="entire">
+                                                <label class="form-check-label" for="entire"></label>
+                                            </th>
                                             <th>#</th>
                                             <th>사용</th>
                                             <th>코드그룹</th>
@@ -696,18 +705,20 @@
                                             <th>수정일</th>
                                         </tr>
                                     </thead>
-                                   
+            
                                     <tbody>
                                         <tr>
-                                            
-                                            
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="1" type="checkbox">
+                                                <label class="form-check-label" for="1"></label>
+                                            </th>
                                             <td>42</td>
                                             <td>Y</td>
                                             <td>42</td>
                                             <td>
                                                 <nav aria-label="breadcrumb">
                                                     <ol class="breadcrumb">
-                                                      <li class="breadcrumb-item"><a href="#">작품.기타사이트유형</a></li>
+                                                        <li class="breadcrumb-item"><a href="#">작품.기타사이트유형</a></li>
                                                     </ol>
                                                 </nav>
                                             </td>
@@ -718,13 +729,17 @@
                                             <td></td>
                                         </tr>
                                         <tr>
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="2" type="checkbox">
+                                                <label class="form-check-label" for="2"></label>
+                                            </th>
                                             <td>41</td>
                                             <td>Y</td>
                                             <td>41</td>
                                             <td>
                                                 <nav aria-label="breadcrumb">
                                                     <ol class="breadcrumb">
-                                                      <li class="breadcrumb-item"><a href="#">작품.연재사이트</a></li>
+                                                        <li class="breadcrumb-item"><a href="#">작품.연재사이트</a></li>
                                                     </ol>
                                                 </nav>
                                             </td>
@@ -735,13 +750,17 @@
                                             <td></td>
                                         </tr>
                                         <tr>
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="3" type="checkbox">
+                                                <label class="form-check-label" for="3"></label>
+                                            </th>
                                             <td>40</td>
                                             <td>Y</td>
                                             <td>40</td>
                                             <td>
                                                 <nav aria-label="breadcrumb">
                                                     <ol class="breadcrumb">
-                                                      <li class="breadcrumb-item"><a href="#">결제.구매자거래상태</a></li>
+                                                        <li class="breadcrumb-item"><a href="#">결제.구매자거래상태</a></li>
                                                     </ol>
                                                 </nav>
                                             </td>
@@ -752,13 +771,17 @@
                                             <td></td>
                                         </tr>
                                         <tr>
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="4" type="checkbox">
+                                                <label class="form-check-label" for="4"></label>
+                                            </th>
                                             <td>39</td>
                                             <td>Y</td>
                                             <td>39</td>
                                             <td>
                                                 <nav aria-label="breadcrumb">
                                                     <ol class="breadcrumb">
-                                                      <li class="breadcrumb-item"><a href="#">결제.판매자거래상태</a></li>
+                                                        <li class="breadcrumb-item"><a href="#">결제.판매자거래상태</a></li>
                                                     </ol>
                                                 </nav>
                                             </td>
@@ -769,13 +792,17 @@
                                             <td></td>
                                         </tr>
                                         <tr>
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="5" type="checkbox">
+                                                <label class="form-check-label" for="5"></label>
+                                            </th>
                                             <td>38</td>
                                             <td>Y</td>
                                             <td>38</td>
                                             <td>
                                                 <nav aria-label="breadcrumb">
                                                     <ol class="breadcrumb">
-                                                      <li class="breadcrumb-item"><a href="#">결제.승인상태</a></li>
+                                                        <li class="breadcrumb-item"><a href="#">결제.승인상태</a></li>
                                                     </ol>
                                                 </nav>
                                             </td>
@@ -785,7 +812,6 @@
                                             <td></td>
                                             <td></td>
                                         </tr>
-                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -793,7 +819,10 @@
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Examples -->
+            
+            
+            
+            
         </div>
     </section>
     <section class="content">
@@ -868,5 +897,26 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+    <!--체크박스 전체 체크 단독 체크-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const entireCheckbox = document.getElementById("entire");
+            const rowCheckboxes = document.querySelectorAll(".row-checkbox");
+    
+            // 전체 선택 체크박스 클릭 시
+            entireCheckbox.addEventListener("change", function () {
+                rowCheckboxes.forEach(checkbox => {
+                    checkbox.checked = entireCheckbox.checked;
+                });
+            });
+    
+            // 개별 체크박스 클릭 시 전체 선택 체크박스 상태 변경
+            rowCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    entireCheckbox.checked = [...rowCheckboxes].every(chk => chk.checked);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
