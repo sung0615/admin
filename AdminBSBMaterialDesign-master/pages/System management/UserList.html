@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="~{xdm/include/head :: head}"></div>
+
+	<form name="formList" id="formList" method="post" autocomplete="off">
+		<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+		<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
+                   
+
+    <section class="content">
+        <div class="container-fluid">
+            
+            <div class="block-header">
+                <h2>회원 정보</h2>
+            </div>
+
+            <!-- Input -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+                            
+                            
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="row clearfix">
+                                        <div class="col-sm-2">
+                                            <select class="form-control show-tick ">
+                                                <option value="">N</option>
+                                                <option value="10">10</option>
+                                               
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <select class="form-control show-tick ">
+                                                <option value="">Y</option>
+                                                <option value="1">10</option>
+                                                <option value="2">20</option>
+                                               
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <select class="form-control show-tick ">
+                                                <option value="">날짜</option>
+                                                <option value="2">등록일</option>
+                                                <option value="3">수정일</option>    
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="2025-01-05" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="2025-02-04" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-sm-2">
+                                            <select class="form-control show-tick ">
+                                                <option value="">검색구분</option>
+                                                <option value="1">코드그룹 코드</option>
+                                                <option value="2">코드그룹 이름</option>
+                                                <option value="3">코드</option>
+                                                <option value="4">대체 코드</option>
+                                                <option value="5">코드 이름</option>
+                                                <option value="6">코드 이름 (영문)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="검색어" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" class="btn btn-default waves-effect">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                                  </svg>
+                                            </button>
+                                            <button type="button" class="btn btn-default waves-effect">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                                                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                                                  </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover  dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input class="form-check-input" type="checkbox" id="entire">
+                                                <label class="form-check-label" for="entire"></label>
+                                            </th>
+                                            <th>#</th>
+                                            <th>이름</th>
+                                            <th>성별</th>
+                                            <th>통신사</th>
+                                            <th>폰번호</th>
+                                            <th>생일</th>
+                                            <th>ID</th>
+                                            <th>이메일</th>
+                                            <th>비밀번호</th>
+                                           
+                                        </tr>
+                                    </thead>
+            
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <input class="form-check-input row-checkbox" id="1" type="checkbox">
+                                                <label class="form-check-label" for="1"></label>
+                                            </th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                              
+                                <a role="button" class="btn btn-danger waves-effect" style=" margin-right:  5px;" href="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                    </svg>
+                                </a>
+                                <a role="button" class="btn btn-danger" href="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                      </svg>
+                                    </a>
+                                <a class="btn btn-primary" href="./code_basic_information.html" role="button" style="float: right; margin-right:  5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                                      </svg>
+                                    </a>
+                                <a class="btn btn-success" href="" role="button" style="float: right; margin-right:  5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-excel" viewBox="0 0 16 16">
+                                        <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
+                                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                                      </svg>
+                                    </a>                                
+                                <a class="btn btn-primary" href="" role="button" style="float: right; margin-right:  5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-type-underline" viewBox="0 0 16 16">
+                                        <path d="M5.313 3.136h-1.23V9.54c0 2.105 1.47 3.623 3.917 3.623s3.917-1.518 3.917-3.623V3.136h-1.23v6.323c0 1.49-.978 2.57-2.687 2.57s-2.687-1.08-2.687-2.57zM12.5 15h-9v-1h9z"/>
+                                      </svg>
+                                    </a>   
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            
+            
+        </div>
+    </section>
+       
+        <!-- Jquery Core Js -->
+        <script src="/xdm/template/master/plugins/jquery/jquery.min.js"></script>
+
+        <!-- Bootstrap Core Js -->
+        <script src="/xdm/template/master/plugins/bootstrap/js/bootstrap.js"></script>
+    
+        <!-- Select Plugin Js -->
+        <script src="/xdm/template/master/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    
+        <!-- Slimscroll Plugin Js -->
+        <script src="/xdm/template/master/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    
+        <!-- Waves Effect Plugin Js -->
+        <script src="/xdm/template/master/plugins/node-waves/waves.js"></script>
+    
+        <!-- Jquery DataTable Plugin Js -->
+        <script src="/xdm/template/master/plugins/jquery-datatable/jquery.dataTables.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+        <script src="/xdm/template/master/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+    
+        <!-- Custom Js -->
+        <script src="/xdm/template/master/js/admin.js"></script>
+        <script src="/xdm/template/master/js/pages/tables/jquery-datatable.js"></script>
+    
+        <!-- Demo Js -->
+        <script src="/xdm/template/master/js/demo.js"></script>
+    <!--체크박스 전체 체크 단독 체크-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const entireCheckbox = document.getElementById("entire");
+            const rowCheckboxes = document.querySelectorAll(".row-checkbox");
+    
+            // 전체 선택 체크박스 클릭 시
+            entireCheckbox.addEventListener("change", function () {
+                rowCheckboxes.forEach(checkbox => {
+                    checkbox.checked = entireCheckbox.checked;
+                });
+            });
+    
+            // 개별 체크박스 클릭 시 전체 선택 체크박스 상태 변경
+            rowCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    entireCheckbox.checked = [...rowCheckboxes].every(chk => chk.checked);
+                });
+            });
+        });
+    </script>
+        <script type="text/javascript">
+            // 페이지네이션 자바 스크립
+            let form = document.querySelector("form[name=formList]");
+         goList = function (thisPage) {
+             document.querySelector("input[name=thisPage]").value = thisPage;
+             form.action = "/codeGroup/codeGroupList";
+             form.submit();
+         }  
+    
+        
+        </script>
+
+</body>
+</html>
